@@ -6,6 +6,13 @@ var gFilterBy = 'All'
 _createTodos()
 
 function getTodos() {
+	if(!gTodos.length)return[
+		{id: 0,
+		txt: 'No todos',
+		isDone: false,
+		createdAt: Date.now(),
+		importance:1},
+	]
 	switch (gFilterBy) {
 		case 'All':
 			return gTodos
