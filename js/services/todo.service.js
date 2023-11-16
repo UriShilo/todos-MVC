@@ -63,6 +63,7 @@ function addTodo(txt, importance) {
 }
 
 function removeTodo(todoId) {
+	if(!confirm(`Are you sure you want to remove:\n${gTodos.find((todo)=>todo.id === todoId).txt}\nfrom your list?`))return
 	const idx = gTodos.findIndex(todo => todo.id === todoId)
 	gTodos.splice(idx, 1)
 
