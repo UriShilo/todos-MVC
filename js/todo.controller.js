@@ -9,6 +9,8 @@ function renderTodos() {
     const strHtml = getTodos().map(todo => `
         <li onclick="onToggleTodo('${todo.id}')">
             <span class="${ todo.isDone ? 'done' : '' }">${todo.txt}</span>
+            <span class="created">${todo.createdAt}</span>
+            <span class="importance">${todo.importance}</span>
             <button onclick="onRemoveTodo(event, '${todo.id}')">x</button>
         </li>
     `).join('')
@@ -30,7 +32,8 @@ function onAddTodo(ev) {
     if(!elTxt.value||!elImportance.value) return
 
     addTodo(elTxt.value,elImportance.value)
-    elInput.value = ''
+    elTxt.value = ''
+    elImportance.value = ''
     
     renderTodos()
 }
