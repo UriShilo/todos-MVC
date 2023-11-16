@@ -5,9 +5,17 @@ var gTodos = [
     { id: 't102', txt: 'Do that', isDone: true },
     { id: 't103', txt: 'Try here', isDone: false },
 ]
+var gFilterBy = 'All'
 
 function getTodos() {
-    return gTodos
+    if(gFilterBy === 'All') return gTodos
+
+    const isDone = gFilterBy === 'Done' ? true : false
+    return gTodos.filter(todo => todo.isDone === isDone)
+}
+
+function setFilterBy(filterBy) {
+    gFilterBy = filterBy
 }
 
 function addTodo(txt) {

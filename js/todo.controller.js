@@ -17,13 +17,20 @@ function renderTodos() {
     elTodoList.innerHTML = strHtml
 }
 
-function onAddTodo() {
+function onAddTodo(ev) {
+    ev.preventDefault()
+
     const elInput = document.querySelector('input')
     if(!elInput.value) return
 
     addTodo(elInput.value)
     elInput.value = ''
     
+    renderTodos()
+}
+
+function onSetFilterBy(elSelect) {
+    setFilterBy(elSelect.value)
     renderTodos()
 }
 
