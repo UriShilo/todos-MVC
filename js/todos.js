@@ -23,5 +23,8 @@ function renderTodos() {
 }
 
 function onRemoveTodo(todoId) {
-    console.log(todoId)
+    const idx = gTodos.findIndex(todo => todo.id === todoId)
+    gTodos.splice(idx, 1)
+
+    renderTodos()
 }
