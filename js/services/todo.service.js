@@ -17,17 +17,12 @@ function getTodos() {
 
 		case 'Task':
 			return gTodos.sort((todoA, todoB) => {
-				const txtA = todoA.txt.toUpperCase();
-				const txtB = todoB.txt.toUpperCase();
-				if (txtA < txtB) {
-					return -1;
-				}
-				if (txtA > txtB) {
-					return 1;
-				}
-
+				const txtA = todoA.txt.toUpperCase()
+				const txtB = todoB.txt.toUpperCase()
+				if (txtA < txtB) return -1
+				if (txtA > txtB) return 1
 				// names must be equal
-				return 0;
+				return 0
 			})
 
 		case 'Created At':
