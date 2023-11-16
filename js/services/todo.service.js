@@ -24,46 +24,47 @@ function setFilterBy(filterBy) {
 	gFilterBy = filterBy
 }
 
-function addTodo(txt) {
-	const todo = _createTodo(txt)
+function addTodo(txt, importance) {
+	const todo = _createTodo(txt, importance)
 	gTodos.unshift(todo)
 
-    _saveTodos()
+	_saveTodos()
 }
 
 function removeTodo(todoId) {
 	const idx = gTodos.findIndex(todo => todo.id === todoId)
 	gTodos.splice(idx, 1)
 
-    _saveTodos()
+	_saveTodos()
 }
 
 function toggleTodo(todoId) {
 	const todo = gTodos.find(todo => todo.id === todoId)
 	todo.isDone = !todo.isDone
 
-    _saveTodos()
+	_saveTodos()
 }
 
 // Private functions
 
 function _createTodos() {
-    gTodos = loadFromStorage('todosDB')
-    if(gTodos && gTodos.length) return
+	gTodos = loadFromStorage('todosDB')
+	if (gTodos && gTodos.length) return
 
 	gTodos = [_createTodo('Do this'), _createTodo('Do that'), _createTodo('Try here')]
-    _saveTodos()
+	_saveTodos()
 }
 
-function _createTodo(txt) {
+function _createTodo(txt, importance = 1) {
 	return {
 		id: makeId(),
 		txt,
 		isDone: false,
-		createdAt: Date.now()
+		createdAt: Date.now(),
+		importance
 	}
 }
 
 function _saveTodos() {
-    saveToStorage('todosDB', gTodos)
+	saveToStorage('todosDB', gTodos)
 }
