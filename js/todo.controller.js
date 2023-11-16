@@ -25,11 +25,11 @@ function renderTodos() {
 function onAddTodo(ev) {
     ev.preventDefault()
 
-    const elInput = document.querySelector('.todo')
-    const elImportance = document.querySelector('.importance')
-    if(!elInput.value||!elImportance.value) return
+    const elTxt = document.querySelector('.setTxt')
+    const elImportance = document.querySelector('.setImportance')
+    if(!elTxt.value||!elImportance.value) return
 
-    addTodo(elInput.value,elImportance.value)
+    addTodo(elTxt.value,elImportance.value)
     elInput.value = ''
     
     renderTodos()
