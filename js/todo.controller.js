@@ -9,7 +9,7 @@ function renderTodos() {
     const strHtml = getTodos().map(todo => `
         <li onclick="onToggleTodo('${todo.id}')">
             <span class="${ todo.isDone ? 'done' : '' }">${todo.txt}</span>
-            <span class="created">${todo.createdAt}</span>
+            <span class="created">${timeConverter(todo.createdAt)}</span>
             <span class="importance">${todo.importance}</span>
             <button onclick="onRemoveTodo(event, '${todo.id}')">x</button>
         </li>
