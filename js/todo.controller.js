@@ -1,6 +1,5 @@
 'use strict'
 
-
 function onInit() {
     renderTodos()
 }
@@ -15,6 +14,12 @@ function renderTodos() {
     `).join('')
 
     elTodoList.innerHTML = strHtml
+
+    const elTotalCount = document.querySelector('.total-count')
+    const elActiveCount = document.querySelector('.active-count')
+
+    elTotalCount.innerText = getTotalCount()
+    elActiveCount.innerText = getActiveCount()
 }
 
 function onAddTodo(ev) {

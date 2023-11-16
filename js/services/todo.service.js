@@ -14,6 +14,14 @@ function getTodos() {
     return gTodos.filter(todo => todo.isDone === isDone)
 }
 
+function getTotalCount() {
+    return gTodos.length
+}
+
+function getActiveCount() {
+    return gTodos.filter(todo => !todo.isDone).length
+}
+
 function setFilterBy(filterBy) {
     gFilterBy = filterBy
 }
