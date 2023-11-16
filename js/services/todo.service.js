@@ -60,6 +60,7 @@ function _createTodo(txt) {
 		id: makeId(),
 		txt,
 		isDone: false,
+		createdAt: Date.now()
 	}
 }
 
