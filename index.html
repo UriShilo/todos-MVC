@@ -10,9 +10,17 @@
     <body onload="onInit()">
         <h1>Let's Todo Today</h1>
 
-        <section class="add-todo">
+        <form onsubmit="onAddTodo(event)" class="add-todo">
             <input type="text" placeholder="What to do?">
-            <button onclick="onAddTodo()">Add</button>
+            <button>Add</button>
+        </form>
+
+        <section class="filter">
+            <select onchange="onSetFilterBy(this)">
+                <option value="All">All</option>
+                <option value="Done">Done</option>
+                <option value="Active">Active</option>
+            </select>
         </section>
 
         <main>
