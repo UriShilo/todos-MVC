@@ -22,6 +22,20 @@ function renderTodos() {
     elTodoList.innerHTML = strHtml
 }
 
+function onAddTodo() {
+    const elInput = document.querySelector('input')
+    if(!elInput.value) return
+
+    const todo = {
+        id: `t${ Date.now() % 10000}`,
+        txt: elInput.value,
+        isDone: false,
+    }
+    gTodos.unshift(todo)
+    elInput.value = ''
+    renderTodos()
+}
+
 function onRemoveTodo(ev, todoId) {
     ev.stopPropagation()
 
