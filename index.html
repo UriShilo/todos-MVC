@@ -7,29 +7,16 @@
         <link rel="stylesheet" href="css/todos.css">
         <title>Todo MVC</title>
     </head>
-    <body>
+    <body onload="onInit()">
         <h1>Let's Todo Today</h1>
 
         <section class="add-todo">
             <input type="text" placeholder="What to do?">
             <button>Add</button>
         </section>
-        
+
         <main>
-            <ul>
-                <li>
-                    <span class="done">Do this</span>
-                    <button onclick="onRemoveTodo(123)">x</button>
-                </li>
-                <li>
-                    <span>Do that</span>
-                    <button>x</button>
-                </li>
-                <li>
-                    <span>Try here</span>
-                    <button>x</button>
-                </li>
-            </ul>
+            <ul class="todo-list"></ul>
         </main>
         <script src="js/todos.js"></script>
     </body>
