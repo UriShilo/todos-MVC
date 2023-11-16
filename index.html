@@ -10,30 +10,36 @@
     <body onload="onInit()">
         <h1>Let's Todo Today</h1>
 
-        <form onsubmit="onAddTodo(event)" class="add-todo">
-            <input type="text" placeholder="What to do?">
-            <button>Add</button>
-        </form>
-
-        <section class="filter">
-            <select onchange="onSetFilterBy(this)">
-                <option value="All">All</option>
-                <option value="Done">Done</option>
-                <option value="Active">Active</option>
-            </select>
-        </section>
+        <header>
+            <form onsubmit="onAddTodo(event)" class="add-todo">
+                <input type="text" placeholder="What to do?">
+                <button>Add</button>
+            </form>
+    
+            <section class="filter">
+                <label>Filter by:</label>
+                <select onchange="onSetFilterBy(this)">
+                    <option value="All">All</option>
+                    <option value="Done">Done</option>
+                    <option value="Active">Active</option>
+                </select>
+            </section>
+        </header>
 
         <main>
             <ul class="todo-list"></ul>
         </main>
 
-        <section class="stats">
-            <span>Total:</span>
-            <span class="total-count"></span>
-
-            <span>Active:</span>
-            <span class="active-count"></span>
-        </section>
+        <footer>
+            <span>Coffeerights 2023</span>
+            <section class="stats">
+                <span>Total:</span>
+                <span class="total-count"></span>
+    
+                <span>Active:</span>
+                <span class="active-count"></span>
+            </section>
+        </footer>
 
         <script src="js/services/util.service.js"></script>
         <script src="js/services/todo.service.js"></script>
